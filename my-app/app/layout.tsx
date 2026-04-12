@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,35 +31,50 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <nav className="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <div className="flex h-16 items-center justify-between">
+              
+              {/* LEFT SIDE */}
+              <div className="flex items-center space-x-6">
+                <h1 className="text-white font-semibold">
+                  ISMP SEA CONFERENCE
+                </h1>
+
+                <Link
+                  href="/"
+                  className="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"
+                >
+                  Info
+                </Link>
+
+                <Link
+                  href="/schedule"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+                >
+                  Schedule
+                </Link>
+
+                <a
+                  href="#"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+                >
+                  Packing-List
+                </a>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex shrink-0 items-center">
-                  <h1 className="h-8 w-auto">ISMP SEA CONFERENCE</h1>
-                </div>
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
-                    <a href="#" aria-current="page" className="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white">Info</a>
-                    <Link
-                      href="/signup"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
-                    >
-                      Sign Up Here
-                    </Link>                    
-                    <Link
-                      href="/schedule"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
-                    >
-                      Schedule
-                    </Link>
-                    <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Packing-List</a>
-                  </div>
-                </div>
+
+              {/* RIGHT SIDE */}
+              <div>
+                <Link
+                  href="/signup"
+                  className="rounded-md bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-violet-500"
+                >
+                  Sign Up Here
+                </Link>
               </div>
+
             </div>
           </div>
         </nav>
+
         {children}
       </body>
     </html>
