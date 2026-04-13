@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-yellow-200">
       <div>
-        
+        <video controls> 
+          <source src="/promoVideo.mp4" type="video/mp4" />
+        </video>
       </div>
       <div className="flex flex-col justify-center items-center text-violet-900">
         <h1>ISMP Southeast Asia Conference</h1>
