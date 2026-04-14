@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,10 +36,15 @@ export default function RootLayout({
               
               {/* LEFT SIDE */}
               <div className="flex items-center space-x-6">
-                <h1 className="text-white font-semibold">
-                  ISMP SEA CONFERENCE
-                </h1>
-
+                <a href="https://www.internationalmentorship.org" target="_blank" rel="noreferrer">
+                  <Image
+                    src="1.svg"
+                    width={150}
+                    height={150}
+                    alt="ISMP logo"
+                  />
+                </a>
+                
                 <Link
                   href="/"
                   className="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"
@@ -53,12 +59,12 @@ export default function RootLayout({
                   Schedule
                 </Link>
 
-                <a
-                  href="#"
+                <Link
+                  href="/packing_list"
                   className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
                 >
                   Packing-List
-                </a>
+                </Link>
               </div>
 
               {/* RIGHT SIDE */}
