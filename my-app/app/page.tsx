@@ -8,8 +8,8 @@ export default function Home() {
       <div className="flex justify-center bg-gray-800">
         <Image 
           src="Conference_CanvaSplash.svg"
-          width={1100}
-          height={1100}
+          width={1200}
+          height={1200}
           alt="SEA Conference Canva Splash Image"
         />
       </div>
@@ -19,7 +19,7 @@ export default function Home() {
         <h1>Bangkok, Thailand</h1>
       </div>
       <div className="flex justify-center bg-black">
-        <video className="w-1/2" controls preload="metadata"> 
+        <video className="w-6xl" controls preload="metadata"> 
           <source src="/promoVideo.mp4#t=0.1" type="video/mp4" />
         </video>
       </div>
