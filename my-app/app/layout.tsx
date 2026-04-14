@@ -41,7 +41,7 @@ export default function RootLayout({
 
                 <Link
                   href="/"
-                  className="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
                 >
                   Info
                 </Link>
@@ -57,7 +57,7 @@ export default function RootLayout({
                   href="#"
                   className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
                 >
-                  Packing-List
+                  Packing List
                 </a>
               </div>
 
