@@ -5,6 +5,17 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="min-h-screen bg-yellow-200">
+      <div className="relative w-full h-170 overflow-hidden">
+        <Image
+          src="/kaeng-krachan-view.jpg"
+          fill={true}
+          alt="kaegn krachan park view"
+          className="object-cover opacity-60 blur-[4px]"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-white text-6xl font-bold drop-shadow-lg">ISMP Southeast Asia Conference 2026</h1>
+        </div>
+      </div>
       <div className="flex justify-center bg-gray-800">
         <Image 
           src="Conference_CanvaSplash.svg"
