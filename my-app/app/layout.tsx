@@ -63,7 +63,7 @@ export default function RootLayout({
                   href="/packing_list"
                   className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
                 >
-                  Packing-List
+                  Packing List
                 </Link>
               </div>
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function PackingListPage() {
   return (
     <div className="min-h-dvh bg-yellow-200 font-mono">
-        <div className="ml-25 mt-9 text-5xl text-violet-700">
+        <div className="ml-25 mt-9 text-5xl text-violet-900">
             Packing List📋
         </div>
         <div className="bg-white my-12 mx-24 rounded-xl min-h-fit                        shadow-lg text-black">
