@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="min-h-screen bg-yellow-200">
-      <div className="relative w-full h-170 overflow-hidden">
+      <div className="relative w-full h-[40vh] md:h-[60vh] lg:h-[80vh] overflow-hidden">
         <Image
           src="/kaeng-krachan-view.jpg"
           fill={true}
@@ -13,7 +13,7 @@ export default function Home() {
           className="object-cover opacity-60 blur-[4px]"
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-white text-6xl font-bold drop-shadow-lg">ISMP Southeast Asia Conference 2026</h1>
+          <h1 className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-lg">ISMP Southeast Asia Conference 2026</h1>
         </div>
       </div>
       <div className="flex justify-center bg-gray-800">
@@ -24,7 +24,7 @@ export default function Home() {
           alt="SEA Conference Canva Splash Image"
         />
       </div>
-      <div className="flex flex-col justify-center items-center space-y-18 h-96 font-mono tracking-wide text-4xl text-violet-900">
+      <div className="flex flex-col justify-center items-center space-y-18 h-[46vh] sm:h-[40vh] md:h-[43vh] lg:h-[46vh] font-mono tracking-wide text-xl sm:text-2xl md:text-3xl lg:text-4xl text-violet-900">
         <h1 className="font-bold">ISMP Southeast Asia Conference</h1>
         <h1>Thursday, April 23, 2026 - Sunday, April 26, 2026</h1>
         <h1>Bangkok, Thailand</h1>
