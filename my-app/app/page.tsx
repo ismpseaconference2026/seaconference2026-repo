@@ -37,7 +37,7 @@ export default function Home() {
       <div className="flex justify-center my-24">
         <Link
           href="/signup"
-          className="rounded-4xl bg-violet-600 px-9 py-5 text-4xl font-semibold text-white shadow hover:bg-violet-500"
+          className="rounded-4xl bg-violet-600 px-5 lg:px-9 py-3 lg:py-5 text-xl lg:text-4xl font-semibold text-white shadow hover:bg-violet-500"
         >
           Sign Up and join us!
         </Link>

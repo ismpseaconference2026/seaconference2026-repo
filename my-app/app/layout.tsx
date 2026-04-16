@@ -35,12 +35,11 @@ export default function RootLayout({
             <div className="flex h-16 items-center justify-between">
               
               {/* LEFT SIDE */}
-              <div className="flex items-center space-x-6">
-                <a href="https://www.internationalmentorship.org" target="_blank" rel="noreferrer">
+              <div className="flex items-center lg:space-x-6">
+                <a className="relative w-[15vh] h-[15vh] sm:w-[15vh] md:w-[16vh] lg:w-[18vh]" href="https://www.internationalmentorship.org" target="_blank" rel="noreferrer">
                   <Image
                     src="1.svg"
-                    width={150}
-                    height={150}
+                    fill={true}
                     alt="ISMP logo"
                   />
                 </a>
@@ -71,7 +70,7 @@ export default function RootLayout({
               <div>
                 <Link
                   href="/signup"
-                  className="rounded-md bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-violet-500"
+                  className="rounded-md bg-violet-600 px-2 lg:px-4 py-2 text-sm font-semibold text-white shadow hover:bg-violet-500"
                 >
                   Sign Up Here
                 </Link>
