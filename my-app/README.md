@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ISMP Southeast Asia Conference 2026
+
+A marketing and registration landing page for the ISMP Southeast Asia Conference, built with Next.js, React, TypeScript, and Tailwind CSS.
+
+## Overview
+
+This repo contains a single-page conference website aimed at students and international attendees traveling to Bangkok, Thailand from April 23 to April 26, 2026.
+
+Key features:
+- Hero section with conference title, dates, location, and registration buttons
+- Conference details section highlighting nature, faith, and workshop focus areas
+- Embedded promotional video section
+- Interactive schedule section with day switching
+- Packing list section with travel recommendations and footnotes
+- Sticky navigation bar with registration links
+
+## Tech Stack
+
+- Next.js 16.2.4
+- React 19.2.4
+- TypeScript 5
+- Tailwind CSS v4
+- ESLint
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start the Next.js development server
+- `npm run build` - Build the app for production
+- `npm run start` - Start the production server after build
+- `npm run lint` - Run ESLint
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/page.tsx` - Main page component that assembles the homepage sections
+- `src/components/` - UI sections and shared layout components
+  - `HeroSection.tsx`
+  - `InfoSection.tsx`
+  - `VideoPromoSection.tsx`
+  - `ScheduleSection.tsx`
+  - `PackingListSection.tsx`
+  - `NavigationBar.tsx`
+  - `Footer.tsx`
+- `src/lib/conference.ts` - Conference data, schedule details, registration links, and packing list
+- `public/` - Static assets used by the site
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Registration buttons open separate Google Forms for Thailand and international attendees.
+- The schedule data and packing list are defined in `src/lib/conference.ts`.
+- The site uses client state to switch the active conference day in the schedule section.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This app can be deployed on Vercel or any hosting platform that supports Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If deploying manually:
+
+```bash
+npm run build
+npm run start
+```
