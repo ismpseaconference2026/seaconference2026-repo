@@ -28,9 +28,9 @@ export default function NavigationBar() {
           />
         </a>
 
-        <NavDivider />
-
         <div className="flex flex-wrap items-center justify-end gap-4">
+          <NavDivider />
+
           <a href="#home" className={menuLinkClassName}>
             Home
           </a>
@@ -46,11 +46,11 @@ export default function NavigationBar() {
           <a href="#packing-list" className={menuLinkClassName}>
             Packing List
           </a>
+
+          <NavDivider />
         </div>
 
-        <NavDivider />
-
-        <div className="flex flex-1 flex-wrap items-center justify-end gap-3">
+        <div className="hidden flex-1 flex-wrap items-center justify-end gap-3 sm:flex">
           <a
             href={registrationLinks.thailand}
             target="_blank"
