@@ -7,7 +7,10 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onSignUp }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[calc(100vh-64px)] flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-[calc(100vh-64px)] flex items-center justify-center overflow-hidden"
+    >
       <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-50 to-white" />
       <div
         className="absolute inset-0 bg-center bg-no-repeat opacity-40"
@@ -23,7 +26,7 @@ export default function HeroSection({ onSignUp }: HeroSectionProps) {
           {conferenceDates} • {conferenceLocation}
         </div>
         <h1 className="text-5xl md:text-7xl font-bold text-slate-950 mb-6 tracking-tight">
-          ISMP Southeast Asia Conference
+          Southeast Asia Conference
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-yellow-400 to-amber-300">
             2026
           </span>

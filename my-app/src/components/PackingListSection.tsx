@@ -2,7 +2,7 @@ import { packingFootnotes, packingList } from "@/lib/conference";
 
 export default function PackingListSection() {
   return (
-    <section className="py-16 px-4 bg-slate-50">
+    <section id="packing-list" className="py-16 px-4 bg-slate-50">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl font-bold text-slate-950 text-center mb-4">Packing List</h2>
 

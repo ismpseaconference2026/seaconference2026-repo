@@ -1,10 +1,18 @@
 import Image from "next/image";
 import { registrationLinks } from "@/lib/conference";
 
+const dividerClassName = "hidden h-5 w-px bg-slate-300 sm:block";
+const menuLinkClassName =
+  "text-left text-sm font-semibold text-black transition hover:text-slate-700";
+
+function NavDivider() {
+  return <div aria-hidden="true" className={dividerClassName} />;
+}
+
 export default function NavigationBar() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4 sm:px-6">
         <a
           href="https://www.internationalmentorship.org/"
           target="_blank"
@@ -20,7 +28,29 @@ export default function NavigationBar() {
           />
         </a>
 
-        <div className="hidden sm:flex items-center gap-3">
+        <NavDivider />
+
+        <div className="flex flex-wrap items-center justify-end gap-4">
+          <a href="#home" className={menuLinkClassName}>
+            Home
+          </a>
+
+          <NavDivider />
+
+          <a href="#schedule" className={menuLinkClassName}>
+            Schedule
+          </a>
+
+          <NavDivider />
+
+          <a href="#packing-list" className={menuLinkClassName}>
+            Packing List
+          </a>
+        </div>
+
+        <NavDivider />
+
+        <div className="flex flex-1 flex-wrap items-center justify-end gap-3">
           <a
             href={registrationLinks.thailand}
             target="_blank"

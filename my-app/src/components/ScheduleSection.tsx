@@ -8,7 +8,7 @@ interface ScheduleSectionProps {
 
 export default function ScheduleSection({ schedules, activeDay, onDayChange }: ScheduleSectionProps) {
   return (
-    <section className="py-8 px-4 bg-slate-50">
+    <section id="schedule" className="py-8 px-4 bg-slate-50">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold text-slate-950 text-center mb-4">Conference Schedule</h2>
 
