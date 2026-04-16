@@ -5,9 +5,9 @@ const dividerClassName = "hidden h-5 w-px bg-slate-300 sm:block";
 const menuLinkClassName =
   "text-left text-sm font-semibold text-black transition hover:text-slate-700";
 const primaryRegistrationClassName =
-  "rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-yellow-300";
+  "rounded-xl bg-yellow-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-yellow-300";
 const secondaryRegistrationClassName =
-  "rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-amber-50";
+  "rounded-xl border border-amber-300 bg-amber-100 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-amber-50";
 
 function NavDivider() {
   return <div aria-hidden="true" className={dividerClassName} />;

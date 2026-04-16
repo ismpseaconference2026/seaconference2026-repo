@@ -7,7 +7,7 @@ import {
 const primaryLinkClassName =
   "rounded-xl bg-yellow-400 px-8 py-4 text-base font-semibold text-slate-950 shadow-lg shadow-yellow-500/20 transition-all hover:-translate-y-0.5 hover:bg-yellow-300";
 const secondaryLinkClassName =
-  "rounded-xl border border-white/70 bg-white px-8 py-4 text-base font-semibold text-slate-950 shadow-lg shadow-slate-950/20 transition-all hover:-translate-y-0.5 hover:bg-amber-50";
+  "rounded-xl border border-amber-200/80 bg-amber-100 px-8 py-4 text-base font-semibold text-slate-950 shadow-lg shadow-amber-950/20 transition-all hover:-translate-y-0.5 hover:bg-amber-50";
 
 function HeroBackground() {
   return (
