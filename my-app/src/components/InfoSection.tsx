@@ -1,31 +1,44 @@
 const infoCards = [
   {
     title: "Nature",
-    description: "Visit Kaeng Krachan National Park, the largest national park in Thailand.",
+    description:
+      "Spend a day in Kaeng Krachan National Park and enjoy one of Thailand's most beautiful outdoor settings.",
   },
   {
     title: "Faith",
-    description: "Explore Christianity, read and study the Bible, and grow in your faith.",
+    description:
+      "Hear the gospel, study the Bible, ask honest questions, and grow in your walk with God.",
   },
   {
     title: "Workshops",
-    description: "Participate in character-building workshops and develop life skills.",
+    description:
+      "Join practical workshops and conversations designed to build character, leadership, and everyday life skills.",
   },
 ];
 
 export default function InfoSection() {
   return (
-    <section className="py-16 px-4 bg-slate-50">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-slate-950 text-center mb-4">About the Conference</h2>
-        <p className="text-xl text-slate-600 text-center mb-16 max-w-3xl mx-auto">
-          Come and grow in your Christian faith or learn more about Christianity, and build friendships with students from across Southeast Asia. 
-        </p>
+    <section className="bg-slate-50 px-4 py-20">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-14 rounded-[2rem] border border-slate-200/70 bg-gradient-to-br from-white via-slate-50 to-yellow-50 px-6 py-8 shadow-sm sm:px-10">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-yellow-700">
+            What To Expect
+          </p>
+          <p className="max-w-4xl text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+            Four days to slow down, build friendships, and grow alongside students from across Southeast Asia.
+          </p>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">
+            From worship and Bible teaching to outdoor adventure and meaningful conversations, the conference is designed to help you explore faith in community.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid gap-6 md:grid-cols-3">
           {infoCards.map((card) => (
-            <div key={card.title} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow hover:bg-slate-50">
-              <div className="w-14 h-14 bg-yellow-50 rounded-xl flex items-center justify-center mb-6">
+            <div
+              key={card.title}
+              className="rounded-[1.75rem] border border-slate-200/80 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-50 ring-1 ring-yellow-100">
                 {card.title === "Workshops" ? (
                   <svg className="w-7 h-7 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 20l8-4V6l-8-4-8 4v10l8 4z" />
@@ -42,8 +55,11 @@ export default function InfoSection() {
                   </svg>
                 )}
               </div>
-              <h3 className="text-xl font-semibold text-slate-950 mb-3">{card.title}</h3>
-              <p className="text-slate-600">{card.description}</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
+                Focus Area
+              </p>
+              <p className="mb-3 text-2xl font-semibold text-slate-950">{card.title}</p>
+              <p className="text-lg leading-8 text-slate-600">{card.description}</p>
             </div>
           ))}
         </div>
