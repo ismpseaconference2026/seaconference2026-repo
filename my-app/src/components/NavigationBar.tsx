@@ -4,6 +4,10 @@ import { registrationLinks } from "@/lib/conference";
 const dividerClassName = "hidden h-5 w-px bg-slate-300 sm:block";
 const menuLinkClassName =
   "text-left text-sm font-semibold text-black transition hover:text-slate-700";
+const primaryRegistrationClassName =
+  "rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-yellow-300";
+const secondaryRegistrationClassName =
+  "rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-amber-50";
 
 function NavDivider() {
   return <div aria-hidden="true" className={dividerClassName} />;
@@ -55,7 +59,7 @@ export default function NavigationBar() {
             href={registrationLinks.thailand}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded-full bg-yellow-500 text-slate-950 text-sm font-semibold hover:bg-yellow-400 transition"
+            className={primaryRegistrationClassName}
           >
             Register (Thailand)
           </a>
@@ -63,7 +67,7 @@ export default function NavigationBar() {
             href={registrationLinks.international}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded-full border border-slate-200 bg-white text-slate-900 text-sm font-semibold hover:bg-slate-50 transition"
+            className={secondaryRegistrationClassName}
           >
             Register (International)
           </a>

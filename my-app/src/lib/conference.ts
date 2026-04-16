@@ -11,12 +11,12 @@ export type ScheduleDay = {
 
 export type ConferenceSchedule = Record<string, ScheduleDay>;
 
-export const conferenceDates = " Thursday April 23 - Sunday April 26";
+export const conferenceDates = "Thursday April 23 - Sunday April 26";
 export const conferenceLocation = "Bangkok, Thailand";
 
 export const registrationLinks = {
   thailand: "https://docs.google.com/forms/d/e/1FAIpQLSepAU0XP41ak7J53_-2-dUW_EXvZ4LoREgJPMGjvZ1MrzBuew/viewform",
-  international: "https://docs.google.com/forms/d/e/1FAIpQLSf-J7l4OzvbPmbhnaiY-32Brrt2SUHMkxS7ljNA3VrZptQmfQ/viewform?usp=send_form",
+  international: "https://docs.google.com/forms/d/e/1FAIpQLSf-J7l4OzvbPmbhnaiY-32Brrt2SUHMkxS7ljNA3VrZptQmfQ/viewform",
 };
 
 export const schedules: ConferenceSchedule = {
