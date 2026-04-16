@@ -16,14 +16,14 @@ export default function Home() {
           <h1 className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-lg">ISMP Southeast Asia Conference 2026</h1>
         </div>
       </div>
-      <div className="flex justify-center bg-gray-800">
+      {/* <div className="flex justify-center bg-gray-800">
         <Image 
           src="Conference_CanvaSplash.svg"
           width={1200}
           height={1200}
           alt="SEA Conference Canva Splash Image"
         />
-      </div>
+      </div> */}
       <div className="flex flex-col justify-center items-center space-y-18 h-[46vh] sm:h-[40vh] md:h-[43vh] lg:h-[46vh] font-mono tracking-wide text-xl sm:text-2xl md:text-3xl lg:text-4xl text-violet-900">
         <h1 className="font-bold">ISMP Southeast Asia Conference</h1>
         <h1>Thursday, April 23, 2026 - Sunday, April 26, 2026</h1>
