@@ -78,6 +78,7 @@ export const packingList = [
   "Bible",
   "Water bottle",
   "Extra cash¹",
+  "Shower slippers",
   "Sports clothes and shoes",
   "Clothes for 3 days and 2 nights²",
   "Pajamas",
