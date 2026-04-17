@@ -1,13 +1,13 @@
 import {
   conferenceDates,
   conferenceLocation,
-  registrationLinks,
 } from "@/lib/conference";
+import RegistrationButtons from "@/components/RegistrationButtons";
 
-const primaryLinkClassName =
+const thailandRegistrationClassName =
+  "rounded-xl border border-slate-300 bg-slate-100 px-8 py-4 text-base font-semibold text-slate-900 shadow-lg shadow-slate-950/20 transition-all hover:-translate-y-0.5 hover:bg-slate-200";
+const internationalRegistrationClassName =
   "rounded-xl bg-yellow-400 px-8 py-4 text-base font-semibold text-slate-950 shadow-lg shadow-yellow-500/20 transition-all hover:-translate-y-0.5 hover:bg-yellow-300";
-const secondaryLinkClassName =
-  "rounded-xl border border-amber-200/80 bg-amber-100 px-8 py-4 text-base font-semibold text-slate-950 shadow-lg shadow-amber-950/20 transition-all hover:-translate-y-0.5 hover:bg-amber-50";
 
 function HeroBackground() {
   return (
@@ -44,26 +44,17 @@ export default function HeroSection() {
             </span>
           </h1>
 
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <a
-              href={registrationLinks.thailand}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Register for the Thailand conference"
-              className={primaryLinkClassName}
-            >
-              Register (Thailand)
-            </a>
-            <a
-              href={registrationLinks.international}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Register for international attendees"
-              className={secondaryLinkClassName}
-            >
-              Register (International)
-            </a>
-          </div>
+          <RegistrationButtons
+            classNameByAudience={{
+              thailand: thailandRegistrationClassName,
+              international: internationalRegistrationClassName,
+            }}
+            containerClassName="mt-8 flex flex-col justify-center gap-4 sm:flex-row"
+            ariaLabelByAudience={{
+              thailand: "Register for the Thailand conference",
+              international: "Register for international attendees",
+            }}
+          />
 
           <p className="mt-6 text-sm font-semibold uppercase tracking-[0.22em] text-amber-200/80">
             What To Expect

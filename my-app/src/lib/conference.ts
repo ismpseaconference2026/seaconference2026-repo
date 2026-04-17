@@ -19,6 +19,19 @@ export const registrationLinks = {
   international: "https://docs.google.com/forms/d/e/1FAIpQLSf-J7l4OzvbPmbhnaiY-32Brrt2SUHMkxS7ljNA3VrZptQmfQ/viewform",
 };
 
+export const registrationOptions = [
+  {
+    href: registrationLinks.thailand,
+    label: "Register (Thailand)",
+    audience: "thailand",
+  },
+  {
+    href: registrationLinks.international,
+    label: "Register (International)",
+    audience: "international",
+  },
+] as const;
+
 export const schedules: ConferenceSchedule = {
   day1: {
     date: "Day 1 - Thursday - April 23, 2026",
