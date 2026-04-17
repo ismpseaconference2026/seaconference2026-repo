@@ -80,8 +80,6 @@ export const schedules: ConferenceSchedule = {
 
 export const packingList = [
   "Valid Passport",
-  "Notebook",
-  "Pen",
   "Bible",
   "Water bottle",
   "Extra cash¹",
@@ -95,6 +93,6 @@ export const packingList = [
 ];
 
 export const packingFootnotes = [
-  "250-300 baht for dinner and market shopping should be enough.",
+  "฿250-300 for dinner and market shopping should be enough.",
   "No tight-fitting, low-cut, sleeveless, or crop-top shirts; bottoms must be longer than mid-thigh.",
 ];
