@@ -96,3 +96,14 @@ export const packingFootnotes = [
   "฿250-300 for dinner and market shopping should be enough.",
   "No tight-fitting, low-cut, sleeveless, or crop-top shirts; bottoms must be longer than mid-thigh.",
 ];
+
+export const tdacInfo = {
+  title: "International Travelers - Thai Customs Declaration (TDAC)",
+  requirement: "Fill out TDAC form for customs declaration",
+  details: [
+    { label: "Purpose of Travel", value: "CONVENTION" },
+    { label: "Type of Accommodation", value: "HOTEL" },
+    { label: "Province", value: "SAMUT SONGKHRAM" },
+    { label: "Address", value: "THE GRACE AMPHAWA, 26 TAMBON BAN PROK, MUEANG SAMUT SONGKHRAM 75000" },
+  ],
+};
