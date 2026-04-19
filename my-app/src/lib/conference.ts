@@ -122,3 +122,30 @@ export const contactInfo = {
 export const socialLinks = {
   instagram: "https://www.instagram.com/ismp_seacon/",
 };
+
+export const faqList = [
+  {
+    question: "When is the SEA Conference 2026?",
+    answer: "The conference will be held from Thursday, April 23 to Sunday, April 26, 2026 in Bangkok, Thailand.",
+  },
+  {
+    question: "Where is the conference venue?",
+    answer: "The conference will be held at The Grace Amphawa located in Samut Songkhram province, approximately 1 hour from Bangkok.",
+  },
+  {
+    question: "What should I bring to the conference?",
+    answer: "Please refer to our Travel Checklist section which includes essentials like a valid passport, Bible, water bottle, appropriate clothing, and other helpful items for the conference.",
+  },
+  {
+    question: "Is there accommodation provided?",
+    answer: "Yes, accommodation is provided at The Grace Amphawa. For international travelers, you may need to fill out the Thai Customs Declaration (TDAC) form with the venue information.",
+  },
+  {
+    question: "What is the registration process?",
+    answer: "We have separate registration forms for Thailand-based and international participants. You can find the registration links in the Registration section or at the top of the page.",
+  },
+  {
+    question: "Do I need a visa to attend?",
+    answer: "Visa requirements depend on your nationality and country of residence. Please check with the Thai embassy or consulate in your country for the most current visa requirements.",
+  },
+];

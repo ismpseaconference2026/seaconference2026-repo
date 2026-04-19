@@ -6,6 +6,7 @@ import InfoSection from "@/components/InfoSection";
 import VideoPromoSection from "@/components/VideoPromoSection";
 import ScheduleSection from "@/components/ScheduleSection";
 import TravelChecklistSection from "@/components/PackingListSection";
+import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import NavigationBar from "@/components/NavigationBar";
@@ -22,6 +23,7 @@ export default function Home() {
       <VideoPromoSection />
       <ScheduleSection schedules={schedules} activeDay={activeDay} onDayChange={setActiveDay} />
       <TravelChecklistSection />
+      <FAQSection />
       <ContactSection />
       <Footer />
     </main>
