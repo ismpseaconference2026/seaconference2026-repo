@@ -5,6 +5,7 @@ const navItems = [
   { href: "#home", label: "Home" },
   { href: "#schedule", label: "Schedule" },
   { href: "#travel-checklist", label: "Travel Checklist" },
+  { href: "#contact", label: "Contact Us" },
 ];
 
 const dividerClassName = "hidden h-5 w-px bg-slate-300 lg:block";

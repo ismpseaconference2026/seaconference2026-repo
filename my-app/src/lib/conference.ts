@@ -112,3 +112,9 @@ export const tdacInfo = {
     { label: "Address", value: "THE GRACE AMPHAWA, 26 TAMBON BAN PROK, MUEANG SAMUT SONGKHRAM 75000" },
   ],
 };
+
+export const contactInfo = {
+  email: "ismpthailand@gmail.com",
+  cc: "aj@internationalmentorship.org",
+  subject: "SEA Conference 2026 Inquiry",
+};
