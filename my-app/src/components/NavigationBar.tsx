@@ -4,7 +4,7 @@ import RegistrationButtons from "@/components/RegistrationButtons";
 const navItems = [
   { href: "#home", label: "Home" },
   { href: "#schedule", label: "Schedule" },
-  { href: "#packing-list", label: "Packing List" },
+  { href: "#travel-checklist", label: "Travel Checklist" },
 ];
 
 const dividerClassName = "hidden h-5 w-px bg-slate-300 lg:block";

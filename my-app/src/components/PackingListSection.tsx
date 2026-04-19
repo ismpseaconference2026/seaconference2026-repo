@@ -4,11 +4,11 @@ const summaryClassName =
   "flex cursor-pointer list-none items-center justify-between gap-4 rounded-2xl bg-white p-6 text-left shadow-lg transition hover:bg-slate-50";
 const panelClassName = "mt-4 rounded-2xl bg-white p-8 shadow-lg";
 
-export default function PackingListSection() {
+export default function TravelChecklistSection() {
   return (
-    <section id="packing-list" className="py-16 px-4 bg-slate-50">
+    <section id="travel-checklist" className="py-16 px-4 bg-slate-50">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl font-bold text-slate-950 text-center mb-4">Packing List</h2>
+        <h2 className="text-4xl font-bold text-slate-950 text-center mb-4">Travel Checklist</h2>
 
         <details className="group">
           <summary className={summaryClassName}>
