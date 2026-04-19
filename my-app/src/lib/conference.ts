@@ -32,6 +32,11 @@ export const registrationOptions = [
   },
 ] as const;
 
+export const videoPromo = {
+  src: "/promoVideo.mp4",
+  poster: "/ISMP_conference_promo_poster.jpeg",
+};
+
 export const schedules: ConferenceSchedule = {
   day1: {
     date: "Day 1 - Thursday - April 23, 2026",
