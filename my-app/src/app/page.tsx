@@ -5,7 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import InfoSection from "@/components/InfoSection";
 import VideoPromoSection from "@/components/VideoPromoSection";
 import ScheduleSection from "@/components/ScheduleSection";
-import PackingListSection from "@/components/PackingListSection";
+import TravelChecklistSection from "@/components/PackingListSection";
 import Footer from "@/components/Footer";
 import NavigationBar from "@/components/NavigationBar";
 import { schedules } from "@/lib/conference";
@@ -20,7 +20,7 @@ export default function Home() {
       <InfoSection />
       <VideoPromoSection />
       <ScheduleSection schedules={schedules} activeDay={activeDay} onDayChange={setActiveDay} />
-      <PackingListSection />
+      <TravelChecklistSection />
       <Footer />
     </main>
   );

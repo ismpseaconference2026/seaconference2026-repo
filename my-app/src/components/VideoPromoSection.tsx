@@ -1,3 +1,5 @@
+import { videoPromo } from "@/lib/conference";
+
 export default function VideoPromoSection() {
   return (
     <section className="py-16 px-4 bg-white">
@@ -7,8 +9,8 @@ export default function VideoPromoSection() {
         </div>
         <div className="overflow-hidden rounded-3xl shadow-xl mx-auto max-w-4xl">
           <video
-            src="/promoVideo.mp4"
-            poster="/ISMP_conference_promo_poster.jpeg"
+            src={videoPromo.src}
+            poster={videoPromo.poster}
             controls
             playsInline
             className="w-full h-[min(60vh,480px)] object-cover"
