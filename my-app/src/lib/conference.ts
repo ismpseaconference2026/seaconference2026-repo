@@ -118,3 +118,7 @@ export const contactInfo = {
   cc: "aj@internationalmentorship.org",
   subject: "SEA Conference 2026 Inquiry",
 };
+
+export const socialLinks = {
+  instagram: "https://www.instagram.com/ismp_seacon/",
+};
