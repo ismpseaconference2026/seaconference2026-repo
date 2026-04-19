@@ -123,6 +123,19 @@ export const socialLinks = {
   instagram: "https://www.instagram.com/ismp_seacon/",
 };
 
+export const announcementsList = [
+  {
+    title: "Welcome to SEA Conference 2026",
+    message: "We are excited to welcome you to the ISMP Southeast Asian Conference 2026! The conference will be held at The Grace Amphawa in Bangkok, Thailand from April 23-26.",
+    date: "April 19, 2026",
+  },
+  {
+    title: "Registration Reminder",
+    message: "Don't forget to register for the conference! We have separate registration forms for Thailand-based and international participants. Please complete your registration as soon as possible.",
+    date: "April 19, 2026",
+  },
+];
+
 export const faqList = [
   {
     question: "When is the SEA Conference 2026?",
