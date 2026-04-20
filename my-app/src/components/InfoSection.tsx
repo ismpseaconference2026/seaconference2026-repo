@@ -1,12 +1,22 @@
+"use client";
+
 import type { ReactNode } from "react";
+import { useState } from "react";
+import Modal from "@/components/Modal";
 
 type InfoCard = {
   title: string;
   description: string;
   icon: ReactNode;
+  details?: {
+    imageUrl: string;
+    mapsLink: string;
+  };
 };
 
 const iconClassName = "h-7 w-7 text-yellow-500";
+const ctaButtonClassName =
+  "inline-block rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200 cursor-pointer";
 
 const infoCards: InfoCard[] = [
   {
@@ -19,6 +29,10 @@ const infoCards: InfoCard[] = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 21h6" />
       </svg>
     ),
+    details: {
+      imageUrl: "/kaeng_krachan_dam.jpeg",
+      mapsLink: "https://maps.app.goo.gl/fTgSFhksWvACmvHW6",
+    },
   },
   {
     title: "Faith",
@@ -44,27 +58,56 @@ const infoCards: InfoCard[] = [
 ];
 
 export default function InfoSection() {
+  const [selectedCard, setSelectedCard] = useState<string | null>(null);
+  const natureCard = infoCards.find((card) => card.title === "Nature");
+  const isNatureModalOpen = selectedCard === "Nature" && natureCard?.details;
+
   return (
-    <section className="bg-slate-50 px-4 py-20">
-      <div className="mx-auto max-w-6xl">
-        <div className="grid gap-6 md:grid-cols-3">
-          {infoCards.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-[1.75rem] border border-slate-200/80 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-50 ring-1 ring-yellow-100">
-                {card.icon}
+    <>
+      <section className="bg-slate-50 px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-6 md:grid-cols-3">
+            {infoCards.map((card) => (
+              <div
+                key={card.title}
+                className="rounded-[1.75rem] border border-slate-200/80 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-50 ring-1 ring-yellow-100">
+                  {card.icon}
+                </div>
+                <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  Focus Area
+                </p>
+                <p className="mb-3 text-2xl font-semibold text-slate-950">{card.title}</p>
+                <p className="text-lg leading-8 text-slate-600">{card.description}</p>
+                {card.details && (
+                  <button
+                    onClick={() => setSelectedCard(card.title)}
+                    className={`${ctaButtonClassName} mt-6`}
+                  >
+                    Learn More
+                  </button>
+                )}
               </div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
-                Focus Area
-              </p>
-              <p className="mb-3 text-2xl font-semibold text-slate-950">{card.title}</p>
-              <p className="text-lg leading-8 text-slate-600">{card.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {isNatureModalOpen && natureCard?.details && (
+        <Modal
+          isOpen={true}
+          onClose={() => setSelectedCard(null)}
+          title="Kaeng Krachan National Park"
+          imageUrl={natureCard.details.imageUrl}
+          imageAlt="Kaeng Krachan National Park"
+          description="Experience one of Thailand's most beautiful natural landscapes during Day 2 of the conference."
+          ctaButton={{
+            text: "View on Google Maps",
+            href: natureCard.details.mapsLink,
+          }}
+        />
+      )}
+    </>
   );
 }

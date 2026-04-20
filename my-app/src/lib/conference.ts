@@ -112,3 +112,48 @@ export const tdacInfo = {
     { label: "Address", value: "THE GRACE AMPHAWA, 26 TAMBON BAN PROK, MUEANG SAMUT SONGKHRAM 75000" },
   ],
 };
+
+export const canvaInfo = {
+  title: "Canva Slides Assignment",
+  requirement: "Create slides from our Canva template and submit to the form",
+  canvaTemplateLink: "https://canva.link/ene1ruv1b9lm0wu",
+  formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfNGG8qZ99zKcxfoex8ZpfBMRhSfZWLhwTnY8T4ZMUj23r7FQ/viewform", 
+  instructions: [
+    "Visit the Canva template link and make a copy of the template to your own Canva account",
+    "Fill out the slides with your information and creativity",
+    "Download your completed slides as a PDF and upload to the form",
+  ],
+};
+
+export const contactInfo = {
+  email: "ismpthailand@gmail.com",
+  cc: "aj@internationalmentorship.org",
+  subject: "SEA Conference 2026 Inquiry",
+};
+
+export const socialLinks = {
+  instagram: "https://www.instagram.com/ismp_seacon/",
+  spotify: "https://open.spotify.com/playlist/0rGDwChR3pzIJ61FuZdKXC?si=78c65d333ca24ce1",
+};
+
+export const announcementsList = [
+  {
+    title: "Canva Slides Assignment",
+    message: "Please complete the Canva slides assignment as part of your conference preparation. Fill out the template with your information, download it as a PDF, and upload it to the form. This is a required pre-conference submission.",
+    cta: {
+      text: "View Assignment",
+      href: "#canva-assignment",
+    },
+    date: "April 20, 2026",
+  },
+  {
+    title: "Registration Reminder",
+    message: "Don't forget to register for the conference! We have separate registration forms for Thailand-based and international participants. Please complete your registration as soon as possible.",
+    date: "April 19, 2026",
+  },
+  {
+    title: "Welcome to SEA Conference 2026",
+    message: "We are excited to welcome you to the ISMP Southeast Asian Conference 2026! The conference will be held at The Grace Amphawa in Bangkok, Thailand from April 23-26.",
+    date: "April 19, 2026",
+  },
+];

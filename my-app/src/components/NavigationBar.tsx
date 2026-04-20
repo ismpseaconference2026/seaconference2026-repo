@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image";
-import RegistrationButtons from "@/components/RegistrationButtons";
+import RegistrationDropdown from "@/components/RegistrationDropdown";
 
 const navItems = [
   { href: "#home", label: "Home" },
   { href: "#schedule", label: "Schedule" },
   { href: "#travel-checklist", label: "Travel Checklist" },
+  { href: "#announcements", label: "Announcements" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#contact", label: "Contact Us" },
 ];
 
 const dividerClassName = "hidden h-5 w-px bg-slate-300 lg:block";
@@ -13,9 +18,9 @@ const menuLinkClassName =
 const mobileMenuLinkClassName =
   "rounded-xl px-3 py-2 text-sm font-semibold text-slate-900 transition hover:bg-amber-50";
 const thailandRegistrationClassName =
-  "rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200";
-const internationalRegistrationClassName =
   "rounded-xl bg-yellow-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-yellow-300";
+const internationalRegistrationClassName =
+  "rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-600";
 const mobileMenuButtonClassName =
   "flex cursor-pointer list-none items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-950 shadow-sm transition hover:border-amber-300 hover:bg-amber-50";
 const mobileMenuPanelClassName =
@@ -26,23 +31,39 @@ function NavDivider() {
 }
 
 export default function NavigationBar() {
+
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4 sm:px-6">
-        <a
-          href="https://www.internationalmentorship.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3"
-        >
-          <Image
-            src="/ISMP_logo_blacktext.png"
-            alt="ISMP logo"
-            width={120}
-            height={40}
-            className="h-auto w-auto"
-          />
-        </a>
+        <div className="flex items-center gap-6">
+          <a
+            href="https://www.internationalmentorship.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3"
+          >
+            <Image
+              src="/ISMP_logo_blacktext.png"
+              alt="ISMP logo"
+              width={120}
+              height={40}
+              className="h-auto w-auto"
+            />
+          </a>
+
+          <div className="hidden flex-wrap items-center gap-4 lg:flex">
+            <NavDivider />
+
+            {navItems.map((item) => (
+              <div key={item.href} className="contents">
+                <a href={item.href} className={menuLinkClassName}>
+                  {item.label}
+                </a>
+                <NavDivider />
+              </div>
+            ))}
+          </div>
+        </div>
 
         <details className="relative lg:hidden">
           <summary className={mobileMenuButtonClassName}>
@@ -65,36 +86,27 @@ export default function NavigationBar() {
               </a>
             ))}
             <div className="my-1 h-px bg-slate-200" aria-hidden="true" />
-            <RegistrationButtons
-              classNameByAudience={{
-                thailand: thailandRegistrationClassName,
-                international: internationalRegistrationClassName,
-              }}
-              containerClassName="flex flex-col gap-2"
+            <RegistrationDropdown
+              buttonClassName={mobileMenuButtonClassName}
+              panelClassName={mobileMenuPanelClassName}
+              thailandClassName={thailandRegistrationClassName}
+              internationalClassName={internationalRegistrationClassName}
+              groupClass="group"
+              wrapperClassName="relative mt-2 inline-block"
             />
           </div>
         </details>
 
-        <div className="hidden flex-wrap items-center justify-end gap-4 lg:flex">
-          <NavDivider />
-
-          {navItems.map((item) => (
-            <div key={item.href} className="contents">
-              <a href={item.href} className={menuLinkClassName}>
-                {item.label}
-              </a>
-              <NavDivider />
-            </div>
-          ))}
+        <div className="relative hidden lg:block">
+          <RegistrationDropdown
+            buttonClassName={mobileMenuButtonClassName}
+            panelClassName={mobileMenuPanelClassName}
+            thailandClassName={thailandRegistrationClassName}
+            internationalClassName={internationalRegistrationClassName}
+            groupClass="group"
+            wrapperClassName="relative"
+          />
         </div>
-
-        <RegistrationButtons
-          classNameByAudience={{
-            thailand: thailandRegistrationClassName,
-            international: internationalRegistrationClassName,
-          }}
-          containerClassName="hidden flex-1 flex-wrap items-center justify-end gap-3 lg:flex"
-        />
       </div>
     </header>
   );
