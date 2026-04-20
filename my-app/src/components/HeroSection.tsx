@@ -4,10 +4,14 @@ import {
 } from "@/lib/conference";
 import RegistrationButtons from "@/components/RegistrationButtons";
 
+const registerDropdownButtonClassName =
+  "flex cursor-pointer list-none items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white/50 hover:bg-white/20";
+const registerDropdownPanelClassName =
+  "absolute left-1/2 top-[calc(100%+0.75rem)] z-50 flex w-[min(20rem,calc(100vw-2rem))] -translate-x-1/2 flex-col gap-2 rounded-2xl border border-white/30 bg-white/95 p-3 shadow-xl backdrop-blur-sm";
 const thailandRegistrationClassName =
-  "rounded-xl border border-slate-300 bg-slate-100 px-8 py-4 text-base font-semibold text-slate-900 shadow-lg shadow-slate-950/20 transition-all hover:-translate-y-0.5 hover:bg-slate-200";
+  "rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200";
 const internationalRegistrationClassName =
-  "rounded-xl bg-yellow-400 px-8 py-4 text-base font-semibold text-slate-950 shadow-lg shadow-yellow-500/20 transition-all hover:-translate-y-0.5 hover:bg-yellow-300";
+  "rounded-xl bg-yellow-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-yellow-300";
 
 function HeroBackground() {
   return (
@@ -44,17 +48,36 @@ export default function HeroSection() {
             </span>
           </h1>
 
-          <RegistrationButtons
-            classNameByAudience={{
-              thailand: thailandRegistrationClassName,
-              international: internationalRegistrationClassName,
-            }}
-            containerClassName="mt-8 flex flex-col justify-center gap-4 sm:flex-row"
-            ariaLabelByAudience={{
-              thailand: "Register for the Thailand conference",
-              international: "Register for international attendees",
-            }}
-          />
+          <div className="relative mt-8 flex justify-center">
+            <details className="group relative">
+              <summary className={registerDropdownButtonClassName}>
+                <span>Register</span>
+                <svg
+                  className="h-4 w-4 transition-transform group-open:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 9 6 6 6-6" />
+                </svg>
+              </summary>
+
+              <div className={registerDropdownPanelClassName}>
+                <RegistrationButtons
+                  classNameByAudience={{
+                    thailand: thailandRegistrationClassName,
+                    international: internationalRegistrationClassName,
+                  }}
+                  containerClassName="flex flex-col gap-2"
+                  ariaLabelByAudience={{
+                    thailand: "Register for the Thailand conference",
+                    international: "Register for international attendees",
+                  }}
+                />
+              </div>
+            </details>
+          </div>
 
           <p className="mt-6 text-sm font-semibold uppercase tracking-[0.22em] text-amber-200/80">
             What To Expect
