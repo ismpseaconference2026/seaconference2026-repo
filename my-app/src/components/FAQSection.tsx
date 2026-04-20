@@ -3,10 +3,7 @@
 import { useState } from "react";
 import RegistrationButtons from "@/components/RegistrationButtons";
 
-const linkClassName = "text-blue-600 hover:text-blue-800 underline cursor-pointer";
-const ctaButtonClassName =
-  "inline-block rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200";
-
+// Types
 type ContentItem = string | { type: "button"; text: string; href: string };
 type FAQItem = {
   question: string;
@@ -15,6 +12,24 @@ type FAQItem = {
   showTdacButton?: boolean;
 };
 
+// Styling Constants - FAQ
+const summaryClassName =
+  "flex cursor-pointer list-none items-center justify-between gap-4 rounded-2xl bg-white p-6 text-left shadow-lg transition hover:bg-slate-50";
+const panelClassName = "mt-4 rounded-2xl bg-white p-6 shadow-lg text-slate-700 leading-relaxed";
+const ctaButtonClassName =
+  "inline-block rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200";
+
+// Styling Constants - Registration Dropdown
+const registerDropdownButtonClassName =
+  "flex cursor-pointer list-none items-center gap-2 rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-slate-200";
+const registerDropdownPanelClassName =
+  "absolute left-0 top-[calc(100%+0.75rem)] z-50 flex w-max min-w-[12rem] flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl";
+const thailandRegistrationClassName =
+  "rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200";
+const internationalRegistrationClassName =
+  "rounded-xl bg-yellow-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-yellow-300";
+
+// FAQ Data
 const faqList: FAQItem[] = [
   {
     question: "When is the SEA Conference 2026?",
@@ -48,6 +63,7 @@ const faqList: FAQItem[] = [
   },
 ];
 
+// Helper Functions
 const renderContent = (content: string | ContentItem[]) => {
   if (typeof content === "string") {
     return <>{content}</>;
@@ -73,18 +89,121 @@ const renderContent = (content: string | ContentItem[]) => {
   );
 };
 
-const summaryClassName =
-  "flex cursor-pointer list-none items-center justify-between gap-4 rounded-2xl bg-white p-6 text-left shadow-lg transition hover:bg-slate-50";
-const panelClassName = "mt-4 rounded-2xl bg-white p-6 shadow-lg text-slate-700 leading-relaxed";
-const registerDropdownButtonClassName =
-  "flex cursor-pointer list-none items-center gap-2 rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-slate-200";
-const registerDropdownPanelClassName =
-  "absolute left-0 top-[calc(100%+0.75rem)] z-50 flex w-max min-w-[12rem] flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl";
-const thailandRegistrationClassName =
-  "rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200";
-const internationalRegistrationClassName =
-  "rounded-xl bg-yellow-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-yellow-300";
+// Sub-Components
+function VenueModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  if (!isOpen) return null;
 
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+      onClick={onClose}
+    >
+      <div
+        className="relative max-w-2xl rounded-2xl bg-white shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 rounded-full bg-slate-100 p-2 hover:bg-slate-200 z-10"
+        >
+          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <div className="overflow-hidden rounded-t-2xl">
+          <img
+            src="/the_grace_amphawa.jpeg"
+            alt="The Grace Amphawa"
+            className="h-64 w-full object-cover"
+          />
+        </div>
+
+        <div className="p-6">
+          <h3 className="mb-2 text-2xl font-semibold text-slate-950">The Grace Amphawa</h3>
+          <p className="mb-6 text-slate-600">
+            Our conference venue located in Samut Songkhram province, approximately 1 hour from Bangkok. Experience the beautiful riverside setting for our April 23-26 conference.
+          </p>
+          <a
+            href="https://maps.app.goo.gl/QRExM3U9soUWpNMc8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-xl bg-yellow-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-yellow-300"
+          >
+            View on Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RegistrationDropdown() {
+  return (
+    <details className="group/register relative inline-block">
+      <summary className={registerDropdownButtonClassName}>
+        <span>Register</span>
+        <svg
+          className="h-4 w-4 transition-transform group-open/register:rotate-180"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 9 6 6 6-6" />
+        </svg>
+      </summary>
+
+      <div className={registerDropdownPanelClassName}>
+        <RegistrationButtons
+          classNameByAudience={{
+            thailand: thailandRegistrationClassName,
+            international: internationalRegistrationClassName,
+          }}
+          containerClassName="flex flex-col gap-2"
+          ariaLabelByAudience={{
+            thailand: "Register for the Thailand conference",
+            international: "Register for international attendees",
+          }}
+        />
+      </div>
+    </details>
+  );
+}
+
+function FAQItemButtons({
+  faq,
+  onVenueClick,
+}: {
+  faq: FAQItem;
+  onVenueClick: () => void;
+}) {
+  return (
+    <>
+      {faq.showTdacButton && (
+        <div className="mt-6 border-t border-slate-200 pt-4">
+          <a href="#tdac-info" className={ctaButtonClassName}>
+            View TDAC Information
+          </a>
+        </div>
+      )}
+      {faq.showVenueButton && (
+        <div className={faq.showTdacButton ? "mt-3" : "mt-6 border-t border-slate-200 pt-4"}>
+          <button onClick={onVenueClick} className={ctaButtonClassName}>
+            Learn More
+          </button>
+        </div>
+      )}
+      {faq.question === "What is the registration process?" && (
+        <div className="mt-6 border-t border-slate-200 pt-4">
+          <RegistrationDropdown />
+        </div>
+      )}
+    </>
+  );
+}
+
+// Main Component
 export default function FAQSection() {
   const [venueModalOpen, setVenueModalOpen] = useState(false);
 
@@ -111,58 +230,7 @@ export default function FAQSection() {
                 </summary>
                 <div className={panelClassName}>
                   <div>{renderContent(faq.content)}</div>
-                  {faq.showTdacButton && (
-                    <div className="mt-6 border-t border-slate-200 pt-4">
-                      <a
-                        href="#tdac-info"
-                        className={ctaButtonClassName}
-                      >
-                        View TDAC Information
-                      </a>
-                    </div>
-                  )}
-                  {faq.showVenueButton && (
-                    <div className="mt-3">
-                      <button
-                        onClick={() => setVenueModalOpen(true)}
-                        className={ctaButtonClassName}
-                      >
-                        Learn More
-                      </button>
-                    </div>
-                  )}
-                  {faq.question === "What is the registration process?" && (
-                    <div className="mt-6 border-t border-slate-200 pt-4">
-                      <details className="group/register relative inline-block">
-                        <summary className={registerDropdownButtonClassName}>
-                          <span>Register</span>
-                          <svg
-                            className="h-4 w-4 transition-transform group-open/register:rotate-180"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 9 6 6 6-6" />
-                          </svg>
-                        </summary>
-
-                        <div className={registerDropdownPanelClassName}>
-                          <RegistrationButtons
-                            classNameByAudience={{
-                              thailand: thailandRegistrationClassName,
-                              international: internationalRegistrationClassName,
-                            }}
-                            containerClassName="flex flex-col gap-2"
-                            ariaLabelByAudience={{
-                              thailand: "Register for the Thailand conference",
-                              international: "Register for international attendees",
-                            }}
-                          />
-                        </div>
-                      </details>
-                    </div>
-                  )}
+                  <FAQItemButtons faq={faq} onVenueClick={() => setVenueModalOpen(true)} />
                 </div>
               </details>
             ))}
@@ -170,49 +238,7 @@ export default function FAQSection() {
         </div>
       </section>
 
-      {venueModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
-          onClick={() => setVenueModalOpen(false)}
-        >
-          <div
-            className="relative max-w-2xl rounded-2xl bg-white shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setVenueModalOpen(false)}
-              className="absolute right-4 top-4 rounded-full bg-slate-100 p-2 hover:bg-slate-200 z-10"
-            >
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            <div className="overflow-hidden rounded-t-2xl">
-              <img
-                src="/the_grace_amphawa.jpeg"
-                alt="The Grace Amphawa"
-                className="h-64 w-full object-cover"
-              />
-            </div>
-
-            <div className="p-6">
-              <h3 className="mb-2 text-2xl font-semibold text-slate-950">The Grace Amphawa</h3>
-              <p className="mb-6 text-slate-600">
-                Our conference venue located in Samut Songkhram province, approximately 1 hour from Bangkok. Experience the beautiful riverside setting for our April 23-26 conference.
-              </p>
-              <a
-                href="https://maps.app.goo.gl/QRExM3U9soUWpNMc8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block rounded-xl bg-yellow-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-yellow-300"
-              >
-                View on Google Maps
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
+      <VenueModal isOpen={venueModalOpen} onClose={() => setVenueModalOpen(false)} />
     </>
   );
 }
