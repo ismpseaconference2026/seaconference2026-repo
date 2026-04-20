@@ -9,12 +9,18 @@ const panelClassName = "mt-4 rounded-2xl bg-white p-8 shadow-lg";
 
 export default function TravelChecklistSection() {
   const canvaDetailsRef = useRef<HTMLDetailsElement>(null);
+  const tdacDetailsRef = useRef<HTMLDetailsElement>(null);
 
   useEffect(() => {
     const handleHashChange = () => {
       if (window.location.hash === '#canva-assignment') {
         if (canvaDetailsRef.current) {
           canvaDetailsRef.current.open = true;
+        }
+      }
+      if (window.location.hash === '#tdac-info') {
+        if (tdacDetailsRef.current) {
+          tdacDetailsRef.current.open = true;
         }
       }
     };
@@ -75,7 +81,7 @@ export default function TravelChecklistSection() {
           </div>
         </details>
 
-        <details className="group mt-6">
+        <details ref={tdacDetailsRef} className="group mt-6" id="tdac-info">
           <summary className={summaryClassName}>
             <div>
               <p className="text-lg font-semibold text-slate-950">International Travelers</p>
