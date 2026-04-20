@@ -17,7 +17,7 @@ export default function ScheduleSection({ schedules, activeDay, onDayChange }: S
             <button
               key={key}
               onClick={() => onDayChange(key)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all ${
+              className={`px-6 py-3 rounded-lg font-medium transition-all cursor-pointer ${
                 activeDay === key
                   ? "bg-yellow-500 text-slate-950 shadow-lg"
                   : "bg-white text-slate-700 hover:bg-slate-100"
