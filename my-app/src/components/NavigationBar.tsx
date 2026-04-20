@@ -18,9 +18,9 @@ const menuLinkClassName =
 const mobileMenuLinkClassName =
   "rounded-xl px-3 py-2 text-sm font-semibold text-slate-900 transition hover:bg-amber-50";
 const thailandRegistrationClassName =
-  "rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200";
-const internationalRegistrationClassName =
   "rounded-xl bg-yellow-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-yellow-300";
+const internationalRegistrationClassName =
+  "rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-600";
 const mobileMenuButtonClassName =
   "flex cursor-pointer list-none items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-950 shadow-sm transition hover:border-amber-300 hover:bg-amber-50";
 const mobileMenuPanelClassName =

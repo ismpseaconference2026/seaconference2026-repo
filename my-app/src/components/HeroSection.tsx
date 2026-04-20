@@ -9,9 +9,9 @@ const registerDropdownButtonClassName =
 const registerDropdownPanelClassName =
   "absolute left-1/2 top-[calc(100%+0.75rem)] z-50 flex w-[min(20rem,calc(100vw-2rem))] -translate-x-1/2 flex-col gap-2 rounded-2xl border border-white/30 bg-white/95 p-3 shadow-xl backdrop-blur-sm";
 const thailandRegistrationClassName =
-  "rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200";
-const internationalRegistrationClassName =
   "rounded-xl bg-yellow-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-yellow-300";
+const internationalRegistrationClassName =
+  "rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-600";
 
 function HeroBackground() {
   return (
