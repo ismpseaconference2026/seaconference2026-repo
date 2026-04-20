@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { useState } from "react";
+import Modal from "@/components/Modal";
 
 type InfoCard = {
   title: string;
@@ -14,6 +15,8 @@ type InfoCard = {
 };
 
 const iconClassName = "h-7 w-7 text-yellow-500";
+const ctaButtonClassName =
+  "inline-block rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200 cursor-pointer";
 
 const infoCards: InfoCard[] = [
   {
@@ -80,7 +83,7 @@ export default function InfoSection() {
                 {card.details && (
                   <button
                     onClick={() => setSelectedCard(card.title)}
-                    className="mt-6 rounded-lg bg-yellow-400 px-4 py-2 font-semibold text-slate-950 transition hover:bg-yellow-300"
+                    className={`${ctaButtonClassName} mt-6`}
                   >
                     Learn More
                   </button>
@@ -92,47 +95,18 @@ export default function InfoSection() {
       </section>
 
       {isNatureModalOpen && natureCard?.details && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
-          onClick={() => setSelectedCard(null)}
-        >
-          <div
-            className="relative max-w-2xl rounded-2xl bg-white shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setSelectedCard(null)}
-              className="absolute right-4 top-4 rounded-full bg-slate-100 p-2 hover:bg-slate-200"
-            >
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            <div className="overflow-hidden rounded-t-2xl">
-              <img
-                src={natureCard.details.imageUrl}
-                alt="Kaeng Krachan National Park"
-                className="h-64 w-full object-cover"
-              />
-            </div>
-
-            <div className="p-6">
-              <h3 className="mb-2 text-2xl font-semibold text-slate-950">Kaeng Krachan National Park</h3>
-              <p className="mb-6 text-slate-600">
-                Experience one of Thailand's most beautiful natural landscapes during Day 2 of the conference.
-              </p>
-              <a
-                href={natureCard.details.mapsLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block rounded-xl bg-yellow-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-yellow-300"
-              >
-                View on Google Maps
-              </a>
-            </div>
-          </div>
-        </div>
+        <Modal
+          isOpen={true}
+          onClose={() => setSelectedCard(null)}
+          title="Kaeng Krachan National Park"
+          imageUrl={natureCard.details.imageUrl}
+          imageAlt="Kaeng Krachan National Park"
+          description="Experience one of Thailand's most beautiful natural landscapes during Day 2 of the conference."
+          ctaButton={{
+            text: "View on Google Maps",
+            href: natureCard.details.mapsLink,
+          }}
+        />
       )}
     </>
   );

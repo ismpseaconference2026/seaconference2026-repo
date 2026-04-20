@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import RegistrationButtons from "@/components/RegistrationButtons";
+import Modal from "@/components/Modal";
 
 // Types
 type ContentItem = string | { type: "button"; text: string; href: string };
@@ -90,54 +91,6 @@ const renderContent = (content: string | ContentItem[]) => {
 };
 
 // Sub-Components
-function VenueModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  if (!isOpen) return null;
-
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
-      onClick={onClose}
-    >
-      <div
-        className="relative max-w-2xl rounded-2xl bg-white shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          onClick={onClose}
-          className="absolute right-4 top-4 rounded-full bg-slate-100 p-2 hover:bg-slate-200 z-10"
-        >
-          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-
-        <div className="overflow-hidden rounded-t-2xl">
-          <img
-            src="/the_grace_amphawa.jpeg"
-            alt="The Grace Amphawa"
-            className="h-64 w-full object-cover"
-          />
-        </div>
-
-        <div className="p-6">
-          <h3 className="mb-2 text-2xl font-semibold text-slate-950">The Grace Amphawa</h3>
-          <p className="mb-6 text-slate-600">
-            Our conference venue located in Samut Songkhram province, approximately 1 hour from Bangkok. Experience the beautiful riverside setting for our April 23-26 conference.
-          </p>
-          <a
-            href="https://maps.app.goo.gl/QRExM3U9soUWpNMc8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block rounded-xl bg-yellow-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-yellow-300"
-          >
-            View on Google Maps
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function RegistrationDropdown() {
   return (
     <details className="group/register relative inline-block">
@@ -189,7 +142,7 @@ function FAQItemButtons({
       )}
       {faq.showVenueButton && (
         <div className={faq.showTdacButton ? "mt-3" : "mt-6 border-t border-slate-200 pt-4"}>
-          <button onClick={onVenueClick} className={ctaButtonClassName}>
+          <button onClick={onVenueClick} className={`${ctaButtonClassName} cursor-pointer`}>
             Learn More
           </button>
         </div>
@@ -238,7 +191,18 @@ export default function FAQSection() {
         </div>
       </section>
 
-      <VenueModal isOpen={venueModalOpen} onClose={() => setVenueModalOpen(false)} />
+      <Modal
+        isOpen={venueModalOpen}
+        onClose={() => setVenueModalOpen(false)}
+        title="The Grace Amphawa"
+        imageUrl="/the_grace_amphawa.jpeg"
+        imageAlt="The Grace Amphawa"
+        description="Our conference venue located in Samut Songkhram province, approximately 1 hour from Bangkok. Experience the beautiful riverside setting for our April 23-26 conference."
+        ctaButton={{
+          text: "View on Google Maps",
+          href: "https://maps.app.goo.gl/QRExM3U9soUWpNMc8",
+        }}
+      />
     </>
   );
 }
