@@ -113,6 +113,14 @@ export default function TravelChecklistSection() {
                   <p className="text-sm text-slate-600 mt-1">{detail.value}</p>
                 </div>
               ))}
+              <a
+                href="https://tdac.immigration.go.th/arrival-card/#/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors mt-4"
+              >
+                Fill Out TDAC Form
+              </a>
             </div>
           </div>
         </details>
