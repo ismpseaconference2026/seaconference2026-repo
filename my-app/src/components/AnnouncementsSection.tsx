@@ -44,7 +44,7 @@ export default function AnnouncementsSection() {
                   {announcement.cta && (
                     <a
                       href={announcement.cta.href}
-                      className="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+                      className="inline-block mt-4 rounded-xl border border-slate-300 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200 cursor-pointer"
                     >
                       {announcement.cta.text}
                     </a>
