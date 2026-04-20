@@ -19,6 +19,14 @@ export default function AnnouncementsSection() {
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-slate-950">{announcement.title}</h3>
                   <p className="mt-2 text-slate-700 leading-relaxed">{announcement.message}</p>
+                  {announcement.cta && (
+                    <a
+                      href={announcement.cta.href}
+                      className="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+                    >
+                      {announcement.cta.text}
+                    </a>
+                  )}
                   {announcement.date && (
                     <p className="mt-3 text-sm text-slate-500">{announcement.date}</p>
                   )}
