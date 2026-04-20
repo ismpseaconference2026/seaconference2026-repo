@@ -81,7 +81,7 @@ export default function TravelChecklistSection() {
           </div>
         </details>
 
-        <details ref={tdacDetailsRef} className="group mt-6" id="tdac-info">
+        <details ref={tdacDetailsRef} className="group mt-6" id="tdac-info" suppressHydrationWarning>
           <summary className={summaryClassName}>
             <div>
               <p className="text-lg font-semibold text-slate-950">International Travelers</p>
@@ -131,7 +131,7 @@ export default function TravelChecklistSection() {
           </div>
         </details>
 
-        <details ref={canvaDetailsRef} className="group mt-6" id="canva-assignment">
+        <details ref={canvaDetailsRef} className="group mt-6" id="canva-assignment" suppressHydrationWarning>
           <summary className={summaryClassName}>
             <div>
               <p className="text-lg font-semibold text-slate-950">Canva Slides Assignment</p>
