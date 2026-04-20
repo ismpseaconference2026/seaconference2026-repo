@@ -133,6 +133,7 @@ export const contactInfo = {
 
 export const socialLinks = {
   instagram: "https://www.instagram.com/ismp_seacon/",
+  spotify: "https://open.spotify.com/playlist/0rGDwChR3pzIJ61FuZdKXC?si=78c65d333ca24ce1",
 };
 
 export const announcementsList = [
