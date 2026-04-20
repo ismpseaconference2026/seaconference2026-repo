@@ -176,7 +176,7 @@ export const faqList = [
   },
   {
     question: "What is the registration process?",
-    answer: "We have separate registration forms for Thailand-based and international participants. You can find the registration links in the Registration section or at the top of the page.",
+    answer: "We have separate registration forms for Thailand-based and international participants. You can find the registration links below:",
   },
   {
     question: "Do I need a visa to attend?",
