@@ -2,7 +2,7 @@ import {
   conferenceDates,
   conferenceLocation,
 } from "@/lib/conference";
-import RegistrationButtons from "@/components/RegistrationButtons";
+import RegistrationDropdown from "@/components/RegistrationDropdown";
 
 const registerDropdownButtonClassName =
   "flex cursor-pointer list-none items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white/50 hover:bg-white/20";
@@ -49,34 +49,18 @@ export default function HeroSection() {
           </h1>
 
           <div className="relative mt-8 flex justify-center">
-            <details className="group relative">
-              <summary className={registerDropdownButtonClassName}>
-                <span>Register</span>
-                <svg
-                  className="h-4 w-4 transition-transform group-open:rotate-180"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 9 6 6 6-6" />
-                </svg>
-              </summary>
-
-              <div className={registerDropdownPanelClassName}>
-                <RegistrationButtons
-                  classNameByAudience={{
-                    thailand: thailandRegistrationClassName,
-                    international: internationalRegistrationClassName,
-                  }}
-                  containerClassName="flex flex-col gap-2"
-                  ariaLabelByAudience={{
-                    thailand: "Register for the Thailand conference",
-                    international: "Register for international attendees",
-                  }}
-                />
-              </div>
-            </details>
+            <RegistrationDropdown
+              buttonClassName={registerDropdownButtonClassName}
+              panelClassName={registerDropdownPanelClassName}
+              thailandClassName={thailandRegistrationClassName}
+              internationalClassName={internationalRegistrationClassName}
+              groupClass="group"
+              wrapperClassName="relative"
+              ariaLabel={{
+                thailand: "Register for the Thailand conference",
+                international: "Register for international attendees",
+              }}
+            />
           </div>
 
           <p className="mt-6 text-sm font-semibold uppercase tracking-[0.22em] text-amber-200/80">

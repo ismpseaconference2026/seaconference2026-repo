@@ -1,5 +1,5 @@
 import { announcementsList } from "@/lib/conference";
-import RegistrationButtons from "@/components/RegistrationButtons";
+import RegistrationDropdown from "@/components/RegistrationDropdown";
 
 const announcementItemClassName =
   "rounded-2xl bg-white p-6 shadow-lg border-l-4 border-yellow-400";
@@ -26,34 +26,20 @@ export default function AnnouncementsSection() {
                   <h3 className="text-lg font-semibold text-slate-950">{announcement.title}</h3>
                   <p className="mt-2 text-slate-700 leading-relaxed">{announcement.message}</p>
                   {announcement.title === "Registration Reminder" && (
-                    <details className="group relative mt-4 inline-block">
-                      <summary className={registerDropdownButtonClassName}>
-                        <span>Register</span>
-                        <svg
-                          className="h-4 w-4 transition-transform group-open:rotate-180"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 9 6 6 6-6" />
-                        </svg>
-                      </summary>
-
-                      <div className={registerDropdownPanelClassName}>
-                        <RegistrationButtons
-                          classNameByAudience={{
-                            thailand: thailandRegistrationClassName,
-                            international: internationalRegistrationClassName,
-                          }}
-                          containerClassName="flex flex-col gap-2"
-                          ariaLabelByAudience={{
-                            thailand: "Register for the Thailand conference",
-                            international: "Register for international attendees",
-                          }}
-                        />
-                      </div>
-                    </details>
+                    <div className="mt-4 inline-block">
+                      <RegistrationDropdown
+                        buttonClassName={registerDropdownButtonClassName}
+                        panelClassName={registerDropdownPanelClassName}
+                        thailandClassName={thailandRegistrationClassName}
+                        internationalClassName={internationalRegistrationClassName}
+                        groupClass="group"
+                        wrapperClassName="relative"
+                        ariaLabel={{
+                          thailand: "Register for the Thailand conference",
+                          international: "Register for international attendees",
+                        }}
+                      />
+                    </div>
                   )}
                   {announcement.cta && (
                     <a

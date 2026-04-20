@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import RegistrationButtons from "@/components/RegistrationButtons";
+import RegistrationDropdown from "@/components/RegistrationDropdown";
 
 const navItems = [
   { href: "#home", label: "Home" },
@@ -32,7 +31,6 @@ function NavDivider() {
 }
 
 export default function NavigationBar() {
-  const [regMenuOpen, setRegMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-md">
@@ -88,43 +86,27 @@ export default function NavigationBar() {
               </a>
             ))}
             <div className="my-1 h-px bg-slate-200" aria-hidden="true" />
-            <RegistrationButtons
-              classNameByAudience={{
-                thailand: thailandRegistrationClassName,
-                international: internationalRegistrationClassName,
-              }}
-              containerClassName="flex flex-col gap-2"
+            <RegistrationDropdown
+              buttonClassName={mobileMenuButtonClassName}
+              panelClassName={mobileMenuPanelClassName}
+              thailandClassName={thailandRegistrationClassName}
+              internationalClassName={internationalRegistrationClassName}
+              groupClass="group"
+              wrapperClassName="relative mt-2 inline-block"
             />
           </div>
         </details>
 
-        <details
-          open={regMenuOpen}
-          onToggle={(e) => setRegMenuOpen(e.currentTarget.open)}
-          className="relative hidden lg:block"
-        >
-          <summary className={mobileMenuButtonClassName}>
-            <span>Register</span>
-            <svg
-              className={`h-4 w-4 transition-transform ${regMenuOpen ? "rotate-180" : ""}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 9 6 6 6-6" />
-            </svg>
-          </summary>
-          <div className={mobileMenuPanelClassName}>
-            <RegistrationButtons
-              classNameByAudience={{
-                thailand: thailandRegistrationClassName,
-                international: internationalRegistrationClassName,
-              }}
-              containerClassName="flex flex-col gap-2"
-            />
-          </div>
-        </details>
+        <div className="relative hidden lg:block">
+          <RegistrationDropdown
+            buttonClassName={mobileMenuButtonClassName}
+            panelClassName={mobileMenuPanelClassName}
+            thailandClassName={thailandRegistrationClassName}
+            internationalClassName={internationalRegistrationClassName}
+            groupClass="group"
+            wrapperClassName="relative"
+          />
+        </div>
       </div>
     </header>
   );

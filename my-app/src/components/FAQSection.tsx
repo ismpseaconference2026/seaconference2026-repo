@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import RegistrationButtons from "@/components/RegistrationButtons";
 import Modal from "@/components/Modal";
+import RegistrationDropdown from "@/components/RegistrationDropdown";
 
 // Types
 type ContentItem = string | { type: "button"; text: string; href: string };
@@ -91,39 +91,6 @@ const renderContent = (content: string | ContentItem[]) => {
 };
 
 // Sub-Components
-function RegistrationDropdown() {
-  return (
-    <details className="group/register relative inline-block">
-      <summary className={registerDropdownButtonClassName}>
-        <span>Register</span>
-        <svg
-          className="h-4 w-4 transition-transform group-open/register:rotate-180"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 9 6 6 6-6" />
-        </svg>
-      </summary>
-
-      <div className={registerDropdownPanelClassName}>
-        <RegistrationButtons
-          classNameByAudience={{
-            thailand: thailandRegistrationClassName,
-            international: internationalRegistrationClassName,
-          }}
-          containerClassName="flex flex-col gap-2"
-          ariaLabelByAudience={{
-            thailand: "Register for the Thailand conference",
-            international: "Register for international attendees",
-          }}
-        />
-      </div>
-    </details>
-  );
-}
-
 function FAQItemButtons({
   faq,
   onVenueClick,
@@ -149,7 +116,18 @@ function FAQItemButtons({
       )}
       {faq.question === "What is the registration process?" && (
         <div className="mt-6 border-t border-slate-200 pt-4">
-          <RegistrationDropdown />
+          <RegistrationDropdown
+            buttonClassName={registerDropdownButtonClassName}
+            panelClassName={registerDropdownPanelClassName}
+            thailandClassName={thailandRegistrationClassName}
+            internationalClassName={internationalRegistrationClassName}
+            groupClass="group/register"
+            wrapperClassName="relative inline-block"
+            ariaLabel={{
+              thailand: "Register for the Thailand conference",
+              international: "Register for international attendees",
+            }}
+          />
         </div>
       )}
     </>
