@@ -72,13 +72,13 @@ export const schedules: ConferenceSchedule = {
     date: "Day 4 - Sunday - April 26, 2026",
     events: [
       { time: "07:00", title: "Check-Out", location: "Conference Hall" },
-      { time: "07:30", title: "Breakfast", location: "Breakfast Hall" },
+      { time: "07:00", title: "Breakfast", location: "Breakfast Hall" },
       { time: "08:00", title: "Workshop Session 3", location: "Conference Hall" },
       { time: "09:00", title: "Plenary Session 3", location: "Conference Hall" },
       { time: "11:00", title: "Lunch", location: "Conference Hall" },
-      { time: "13:00", title: "Closing Session", location: "Conference Hall" },
-      { time: "15:00", title: "Departure and Travel", location: "The Grace Amphawa" },
-      { time: "18:00", title: "Dinner", location: "Hankuk Town" },
+      { time: "12:00", title: "Plenary Session 4", location: "Conference Hall" },
+      { time: "15:30", title: "Departure and Travel", location: "The Grace Amphawa" },
+      { time: "18:00", title: "Dinner", location: "Samut Sakhon" },
     ],
   },
 };
@@ -137,6 +137,11 @@ export const socialLinks = {
 };
 
 export const announcementsList = [
+  {
+    title: "Travel Information Update",
+    message: "International travelers: travel information between the conference and the Thailand airport has been communicated to your mentors. Please reach out to your mentors if you have any questions.\nThailand attendees: travel information to and from the conference has been communicated through the LINE group. Please reach out to a mentor if you are not in the LINE group.",
+    date: "April 22, 2026",
+  },
   {
     title: "Canva Slides Assignment",
     message: "Please complete the Canva slides assignment as part of your conference preparation. Fill out the template with your information, download it as a PDF, and upload it to the form. This is a required pre-conference submission.",

@@ -20,11 +20,30 @@ export default function AnnouncementsSection() {
 
         <div className="space-y-4">
           {announcementsList.map((announcement, index) => (
-            <div key={index} className={announcementItemClassName}>
+            <div
+              key={index}
+              className={`${announcementItemClassName} ${
+                index === 0 ? "border-yellow-500 ring-2 ring-yellow-200" : ""
+              }`}
+            >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-slate-950">{announcement.title}</h3>
-                  <p className="mt-2 text-slate-700 leading-relaxed">{announcement.message}</p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="text-lg font-semibold text-slate-950">{announcement.title}</h3>
+                    {index === 0 && (
+                      <span className="rounded-full bg-yellow-300 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-900">
+                        Latest
+                      </span>
+                    )}
+                  </div>
+                  <div className="mt-2 space-y-2 text-slate-700 leading-relaxed">
+                    {announcement.message
+                      .split("\n")
+                      .filter((line) => line.trim().length > 0)
+                      .map((line, lineIndex) => (
+                        <p key={lineIndex}>{line}</p>
+                      ))}
+                  </div>
                   {announcement.title === "Registration Reminder" && (
                     <div className="mt-4 inline-block">
                       <RegistrationDropdown
