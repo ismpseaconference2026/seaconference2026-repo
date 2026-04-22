@@ -62,6 +62,10 @@ const faqList: FAQItem[] = [
     question: "Do I need a visa to attend?",
     content: "Visa requirements depend on your nationality and country of residence. Please check with the Thai embassy or consulate in your country for the most current visa requirements.",
   },
+  {
+    question: "Where can I exchange my currency for Thai baht?",
+    content: "After landing in Thailand, you can exchange for Thai baht at the airport currency exchange counter after showing your passport.",
+  },
 ];
 
 // Helper Functions

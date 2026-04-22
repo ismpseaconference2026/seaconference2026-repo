@@ -98,7 +98,7 @@ export const packingList = [
 ];
 
 export const packingFootnotes = [
-  "฿250-300 for dinner and market shopping should be enough.",
+  "฿250-300 for dinner and market shopping should be enough. You can exchange for Thai baht at the airport currency exchange counter after showing your passport.",
   "No tight-fitting, low-cut, sleeveless, or crop-top shirts; bottoms must be longer than mid-thigh.",
 ];
 
