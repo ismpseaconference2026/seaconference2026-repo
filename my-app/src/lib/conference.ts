@@ -139,8 +139,8 @@ export const socialLinks = {
 export const announcementsList = [
   {
     title: "Travel Information Update",
-    message: "Travel information has already been communicated to mentors for international travelers. Students in Thailand should have received it directly. Please look out for that information and follow up if you have not seen it.",
-    date: "April 21, 2026",
+    message: "International travelers: travel information between the conference and the Thailand airport has been communicated to your mentors. Please reach out to your mentors if you have any questions.\nThailand attendees: travel information to and from the conference has been communicated through the LINE group. Please reach out to a mentor if you are not in the LINE group.",
+    date: "April 22, 2026",
   },
   {
     title: "Canva Slides Assignment",
