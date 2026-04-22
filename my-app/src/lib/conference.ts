@@ -125,6 +125,12 @@ export const canvaInfo = {
   ],
 };
 
+export const workshopInfo = {
+  title: "Workshop Signups",
+  requirement: "Sign up for workshops during the conference by filling out the form",
+  workshopGoogleFormLink: "https://docs.google.com/forms/d/e/1FAIpQLScMPDo2_Iqh9s_T0wvvNrIcXNw_lnCfEHoJhT2ITK8-TczRAg/viewform"
+}
+
 export const contactInfo = {
   email: "ismpthailand@gmail.com",
   cc: "aj@internationalmentorship.org",
@@ -137,6 +143,15 @@ export const socialLinks = {
 };
 
 export const announcementsList = [
+  {
+    title: "Workshops Sign Up Form",
+    message: "Sign ups for conference workshops are now open. Please fill out the form to indicate which workshops you would like to attend.",
+    date: "April 22, 2026",
+    cta: {
+      text: "View Form",
+      href: workshopInfo.workshopGoogleFormLink,
+    },
+  },
   {
     title: "Travel Information Update",
     message: "International travelers: travel information between the conference and the Thailand airport has been communicated to your mentors. Please reach out to your mentors if you have any questions.\nThailand attendees: travel information to and from the conference has been communicated through the LINE group. Please reach out to a mentor if you are not in the LINE group.",

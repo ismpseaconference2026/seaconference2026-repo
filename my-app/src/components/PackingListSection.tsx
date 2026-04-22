@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { packingFootnotes, packingList, tdacInfo, canvaInfo } from "@/lib/conference";
+import { canvaInfo, packingFootnotes, packingList, tdacInfo, workshopInfo } from "@/lib/conference";
 
 const summaryClassName =
   "flex cursor-pointer list-none items-center justify-between gap-4 rounded-2xl bg-white p-6 text-left shadow-lg transition hover:bg-slate-50";
@@ -10,6 +10,7 @@ const panelClassName = "mt-4 rounded-2xl bg-white p-8 shadow-lg";
 export default function TravelChecklistSection() {
   const canvaDetailsRef = useRef<HTMLDetailsElement>(null);
   const tdacDetailsRef = useRef<HTMLDetailsElement>(null);
+  const workshopDetailsRef = useRef<HTMLDetailsElement>(null);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -183,6 +184,36 @@ export default function TravelChecklistSection() {
                 Upload PDF to Form
               </a>
             </div>
+          </div>
+        </details>
+
+        <details ref={workshopDetailsRef} className="group mt-6" id="workshop-details" suppressHydrationWarning>
+          <summary className={summaryClassName}>
+            <div>
+              <p className="text-lg font-semibold text-slate-950">Workshop Signups</p>
+              <p className="mt-1 text-sm text-slate-500">
+                {workshopInfo.requirement}
+              </p>
+            </div>
+            <svg
+              className="h-5 w-5 text-slate-500 transition-transform group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 9 6 6 6-6" />
+            </svg>
+          </summary>
+          <div className="border-t border-slate-200 pt-4 space-y-4">
+            <a
+              href={workshopInfo.workshopGoogleFormLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+            >
+              View Google Form
+            </a>
           </div>
         </details>
       </div>
